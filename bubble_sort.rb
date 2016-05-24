@@ -1,11 +1,14 @@
 def bubble_sort(input_array)
 	the_length = input_array.length-1
-	until the_length == 1
+	swapped = true
+	while swapped do
+		swapped = false
 		(0..the_length-1).each do |x|
 			if (input_array[x] > input_array[x+1])
 				swap = input_array[x+1]
 				input_array[x+1] = input_array[x]
 				input_array[x] = swap
+				swapped = true
 			end
 		end
 		the_length -= 1
